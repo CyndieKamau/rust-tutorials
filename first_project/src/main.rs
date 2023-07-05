@@ -55,6 +55,64 @@ fn main() {
 
 
 
+// COMPOUND TYPES -> Tuples, Arrays
+
+// 1. Tuples -> store multiple values in a var
+// N.B Max value to be stored in a tuple is 12
+
+let student_a = ("Cyndie", 'A', 3.57);
+
+//let name_of_student_a = student_a.0;
+//let grade_of_student_a = student_a.1;
+//let gpa_of_student_a = student_a.2;
+
+// To write the let statements above in one line of code;
+
+let(name_of_student_a, grade_of_student_a, gpa_of_student_a) = student_a;
+
+println!("{} had a GPA of {} after scoring an {}", name_of_student_a, gpa_of_student_a, grade_of_student_a);
+
+// can also use dot notation
+
+println!("{} had a GPA of {} after scoring an {}", student_a.0, student_a.2, student_a.1);
+
+
+
+// ARRAYS -> Store upto 32, can only store same data types (int, str, char or float) uses bracket notation
+
+let students = ["Cyndie", "John", "Anita", "Sam"];
+let students_grades = ['A', 'D', 'B','C' ];
+
+println!("The first student in our class is {} with a grade of {}.", students[0], students_grades[0]);
+
+
+// using a for loop to iterate 
+
+for student in students.iter()  {
+    println!("The students are {}", student);
+
+}
+
+// VECTORS -> Re-sizeable arrays;
+
+let mut students2 = vec!["Cyndie", "John", "Anita", "Sam"];
+let mut students2_grades = vec!['A', 'D', 'B', 'C'];
+students2.push("David");
+students2_grades.push('E');
+
+//using a for loop;
+
+for (student2, student2_grade) in students2.iter().zip(students2_grades.iter()) {
+
+    println!("Student {} got this grade: {}", student2, student2_grade);
+}
+
+
+
+
+
+
+
 
 }
 
