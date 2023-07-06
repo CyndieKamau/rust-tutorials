@@ -62,10 +62,6 @@ fn main() {
 
 let student_a = ("Cyndie", 'A', 3.57);
 
-//let name_of_student_a = student_a.0;
-//let grade_of_student_a = student_a.1;
-//let gpa_of_student_a = student_a.2;
-
 // To write the let statements above in one line of code;
 
 let(name_of_student_a, grade_of_student_a, gpa_of_student_a) = student_a;

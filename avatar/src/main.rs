@@ -65,6 +65,7 @@ fn main() {
         loop {
 
             // Print the list of samurais and prompt for user input.
+            println!("");
             println!("There are 4 samurai warriors currently. Choose one to learn about them.");
             println!("Type 'exit' to quit");
 
