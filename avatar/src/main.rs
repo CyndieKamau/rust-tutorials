@@ -1,5 +1,4 @@
-#![allow(unused)]
-use std::io::{self, Write};
+use std::io;
 /*
 Fun avatar game to learn more on Rust!
 
@@ -19,7 +18,7 @@ fn main() {
      */
 
 
-    fn welcome() -> io::Result<()> {
+    fn welcome() {
         println!("Hey there! What is your name?");
 
         //Initialize an empty string to store the user's input, `your_name`
@@ -28,14 +27,18 @@ fn main() {
         let stdin = io::stdin();
 
         // Read a line from the standard input and store it in `your_name`.
-        stdin.read_line(&mut your_name)?;
+        stdin.read_line(&mut your_name)
+               /*returns a  result value, either Ok or Err, Ok indicates Operation was successful, Err failed
+                if "Ok", you will get back the value the user typed if ERR you will get an error messages that you defined in the expect
+                if you dont call expect you will get a warning
+                */
+
+            .expect("Failed to read line");
         println!("Welcome to the game {} ", your_name);
 
 
 
-        // Return `Ok(())` to signify that the function has completed without any I/O errors.
-        // This is needed because the function's return type is `io::Result<()>`.
-        Ok(()) 
+
 
     }
     
@@ -45,12 +48,12 @@ fn main() {
 
      */
 
-    fn choose_samurai() -> io::Result<()> {
+    fn choose_samurai(){
 
         // Stored info about the samurais as vectors so we can add more later. Arrays in rust are fixed length.
-        let mut samurais: Vec<&str> = vec!["Ada", "Vita", "Uzi", "Doa"];
-        let mut samurais_ages: Vec<i32> = vec![30, 25, 19, 27 ];
-        let mut about_samurais: Vec<&str> = vec![
+        let samurais: Vec<&str> = vec!["Ada", "Vita", "Uzi", "Doa"];
+        let samurais_ages: Vec<i32> = vec![30, 25, 19, 27 ];
+        let about_samurais: Vec<&str> = vec![
             r#"Ada is the squad leader.
         She is a fierce fighter known as the queen of death"#,
             r#"Vita was once the squad leader, but got kicked out.
@@ -79,7 +82,13 @@ fn main() {
 
             let stdin = io::stdin();
 
-            stdin.read_line(&mut your_choice)?;
+            stdin.read_line(&mut your_choice)
+
+                /*returns a  result value, either Ok or Err, Ok indicates Operation was successful, Err failed
+                if "Ok", you will get back the value the user typed if ERR you will get an error messages that you defined in the expect
+                if you dont call expect you will get a warning
+                */
+                .expect("Error reading line");
 
             if your_choice.trim() == "exit" {
                 println!("See you again, buddy!");
@@ -106,7 +115,7 @@ fn main() {
 
         }
 
-        Ok(())
+        
 
 
     }
