@@ -1,3 +1,0 @@
-cargo:rerun-if-changed=build/main.rs
-cargo:rustc-env=TYPENUM_BUILD_CONSTS=/home/hp/Desktop/rust/SHA256_password_cracker/target/debug/build/typenum-13a9c91c0ec5cc46/out/consts.rs
-cargo:rustc-env=TYPENUM_BUILD_OP=/home/hp/Desktop/rust/SHA256_password_cracker/target/debug/build/typenum-13a9c91c0ec5cc46/out/op.rs
