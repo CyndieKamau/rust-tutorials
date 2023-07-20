@@ -22,8 +22,12 @@ use std::time::{SystemTime, UNIX_EPOCH};
 
 use sha2::{Sha256, Digest};   //for sha256 hashing
 
+
+
+
 #[derive(Debug)]  //to help rust print your struct in a default way
 #[allow(dead_code)]  //compiler gave warning I'm not directly reading contents of my struct.
+
 
 // The structure of our blockchain
 struct Block {
